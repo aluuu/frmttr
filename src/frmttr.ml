@@ -5,7 +5,7 @@ type ('a, 'b) fmt =
   | Compose : ('b, 'c) fmt * ('a, 'b) fmt -> ('a, 'c) fmt
 
 let rec intp : type a b. (a, b) fmt -> (string -> a) -> b = fun f k ->
- match f with
+  match f with
   | Lit str -> k str
   | Int -> (fun x -> k (string_of_int x))
   | Float -> (fun x -> k (string_of_float x))
