@@ -1,0 +1,7 @@
+version = "%%VERSION%%"
+description = "Generic formatting/scanning library"
+archive(byte) = "frmttr.cma"
+archive(byte, plugin) = "frmttr.cma"
+archive(native) = "frmttr.cmxa"
+archive(native, plugin) = "frmttr.cmxs"
+exists_if = "frmttr.cma"

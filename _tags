@@ -1,0 +1,4 @@
+"src": include
+<src/*>: include
+
+<test/*>: frmttr

@@ -1,0 +1,14 @@
+opam-version: "1.2"
+name: "frmttr"
+version: "0.1"
+maintainer: "Alexander Dinu <aluuu@husa.su>"
+author: "Alexander Dinu <aluuu@husa.su>"
+license: "BSD3"
+dev-repo: "https://github.com/aluuu/frmttr"
+build: [
+  "ocaml" "pkg/build.ml" "native=%{ocaml-native}%"
+                         "native-dynlink=%{ocaml-native-dynlink}%"
+                         "optionaldep=%{optionaldep:installed}%]"]
+install: [make "install"]
+remove: ["ocamlfind" "remove" "project"]
+depends: "ocamlfind"
