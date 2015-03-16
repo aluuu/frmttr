@@ -2,7 +2,7 @@
 
 Playing with GADT in OCaml 4.02.
 
-Repository provides simplified `sprintf` analog.
+Repository provides simplified `sprintf` and `sscanf` analogs.
 
 ## Example
 
@@ -10,9 +10,13 @@ Repository provides simplified `sprintf` analog.
 open Frmttr
 
 let () =
-  let fmt = Lit "some string " || Int || Lit " some other string "|| Float in
-  let str = sprintf fmt 1 5.0123 in
-  assert (str = "some string 1 some other string 5.0123")
+  let fmt = Lit "some string " || Int || Lit " some other string "|| Int in
+  let str = sprintf fmt 1 5 in
+  assert (str = "some string 1 some other string 5")
+
+let fmt = Lit "some string " || Int in
+  let result = sscanf fmt "some string 42" in
+  assert (result = Some 42)
 ```
 
 ## References
