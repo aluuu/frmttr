@@ -1,6 +1,7 @@
 type ('a, 'b) fmt =
   | Lit : string -> ('a, 'a) fmt
   | Int : ('a, int -> 'a) fmt
+  | Float : ('a, float -> 'a) fmt
   | Compose : ('b, 'c) fmt * ('a, 'b) fmt -> ('a, 'c) fmt
 
 val intp : ('a, 'b) fmt -> (string -> 'a) -> 'b
